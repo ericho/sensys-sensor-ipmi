@@ -100,5 +100,12 @@ mca_sensor_ipmi_ts_la_LIBADD = /opt/sensys/lib/libsensysplugins.la \
                                /opt/sensys/lib/libsensysplugins_helper.la \
                                $(sensor_ipmi_ts_LIBS) $(ipmiutil_LIBS) -lm
 
+noinst_LTLIBRARIES = libmca_sensor_ipmi_ts.la
+libmca_sensor_ipmi_ts_la_SOURCES = $(sources)
+libmca_sensor_ipmi_ts_la_CPPFLAGS = $(mca_sensor_ipmi_ts_la_CPPFLAGS)
+libmca_sensor_ipmi_ts_la_LIBADD = $(mca_sensor_ipmi_ts_la_LIBADD)
+libmca_sensor_ipmi_ts_la_LDFLAGS = $(mca_sensor_ipmi_ts_la_LDFLAGS)
+
 include src/ipmi_test_sensor/Makefile.am
 include src/ipmi_sensor/Makefile.am
+include src/tests/Makefile.am
