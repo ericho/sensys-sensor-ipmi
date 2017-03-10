@@ -88,16 +88,16 @@ sources = \
  
 
 
-mca_sensor_ipmi_ts_la_CPPFLAGS = $(sensor_ipmi_ts_CPPFLAGS) $(ipmiutil_CPPFLAGS) -I/opt/openrcm/include/openmpi \
-				-I/opt/openrcm/include/openmpi/opal/mca/hwloc/hwloc1110/hwloc/include/ \
-				-I/opt/openrcm/include/openmpi/opal/mca/event/libevent2022/libevent/include/ \
-				-I/opt/openrcm/include/openmpi/opal/mca/event/libevent2022/libevent/ \
+mca_sensor_ipmi_ts_la_CPPFLAGS = $(sensor_ipmi_ts_CPPFLAGS) $(ipmiutil_CPPFLAGS) -I/opt/sensys/include/openmpi \
+				-I/opt/sensys/include/openmpi/opal/mca/hwloc/hwloc1110/hwloc/include/ \
+				-I/opt/sensys/include/openmpi/opal/mca/event/libevent2022/libevent/include/ \
+				-I/opt/sensys/include/openmpi/opal/mca/event/libevent2022/libevent/ \
 				-Isrc/
 mca_sensor_ipmi_ts_la_CXXFLAGS = $(sensor_ipmi_ts_CXXFLAGS) $(ipmiutil_CXXFLAGS) -std=c++11
 mca_sensor_ipmi_ts_la_SOURCES = $(sources)
 mca_sensor_ipmi_ts_la_LDFLAGS = -module -avoid-version $(ipmiutil_LDFLAGS)
-mca_sensor_ipmi_ts_la_LIBADD = /opt/openrcm/lib/libsensysplugins.la \
-                               /opt/openrcm/lib/libsensysplugins_helper.la \
+mca_sensor_ipmi_ts_la_LIBADD = /opt/sensys/lib/libsensysplugins.la \
+                               /opt/sensys/lib/libsensysplugins_helper.la \
                                $(sensor_ipmi_ts_LIBS) $(ipmiutil_LIBS) -lm
 
 include src/ipmi_test_sensor/Makefile.am
