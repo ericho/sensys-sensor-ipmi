@@ -1,0 +1,13 @@
+sudo: required
+
+language: c
+
+services:
+  - docker
+
+before_install:
+  - sudo service docker restart
+  - sleep 3
+  - sudo docker pull erichcm/sensys-1.0
+
+script: "bash -c ./build.sh"
